@@ -1,10 +1,10 @@
 import * as cdk from "aws-cdk-lib";
 import { Construct } from "constructs";
-import { AppRunnerConstruct } from "./construct/app-runner-construct";
+import { EcrConstruct } from "./construct/ecr-construct";
 
-export class LlamaindexRunnerStack extends cdk.Stack {
+export class ContainerStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props: cdk.StackProps) {
     super(scope, id, props);
-    new AppRunnerConstruct(this, id, props);
+    new EcrConstruct(this, id);
   }
 }
